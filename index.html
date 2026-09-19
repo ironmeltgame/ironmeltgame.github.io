@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fight for GAIA — Earth is waiting.</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
 <meta name="description" content="Earth is waiting. Fight for GAIA is a block-building combat game: build your battle bot block by block, watch it get shot apart piece by piece — and fight to reclaim Earth.">
 <style>
   :root {
@@ -88,6 +90,15 @@
     font-size: clamp(2.6rem, 8vw, 5rem);
     font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase;
     line-height: 1.05;
+  }
+  h1.hero-banner { line-height: 0; margin: 0.2rem 0 0.4rem; }
+  h1.hero-banner img {
+    display: block; width: min(760px, 92vw); height: auto; margin: 0 auto;
+    filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.6));
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
   }
   h1 .gaia {
     color: var(--aurora);
@@ -451,7 +462,7 @@
 <header id="top">
   <div class="hero-grid"></div>
   <div class="hero-tag">In Development &middot; PC</div>
-  <h1>Fight for <span class="gaia">GAIA</span></h1>
+  <h1 class="hero-banner"><img src="img/ironmelt-banner.png" alt="Ironmelt · Fight for GAIA" width="1200" height="420"></h1>
   <p class="hero-slogan">Earth is waiting.</p>
   <p class="hero-sub">
     Build your battle bot <strong>block by block</strong>. Watch it get shot apart

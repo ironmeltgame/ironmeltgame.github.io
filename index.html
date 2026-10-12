@@ -455,6 +455,22 @@
   #watch .section-intro a { color: var(--aurora); }
   .video-note { text-align: center; color: var(--text-dim); font-size: 0.8rem; margin-top: 0.8rem; }
   .video-note a { color: var(--text-dim); }
+  .video-more {
+    max-width: 860px; margin: 1rem auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .video-small .play { width: 52px; height: 52px; }
+  .video-small .play svg { width: 22px; height: 22px; }
+  .video-channel {
+    position: relative; aspect-ratio: 16 / 9; border: 1px solid var(--line); background: var(--bg-soft);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem;
+    color: var(--text); text-decoration: none; letter-spacing: 0.05em;
+  }
+  .video-channel .play { position: static; transform: none; width: 52px; height: 52px; }
+  .video-channel .play svg { width: 22px; height: 22px; }
+  .video-channel:hover .play { transform: scale(1.1); }
+  .video-channel:hover { border-color: var(--aurora); }
+  @media (max-width: 560px) { .video-more { grid-template-columns: 1fr; } }
 
   /* ---------- Story ---------- */
   .story-wrap {
@@ -540,9 +556,9 @@
 <nav>
   <a class="nav-logo" href="#top"><svg class="hex" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><polygon points="32,6 54,18.7 54,45.3 32,58 10,45.3 10,18.7" fill="none" stroke="#d4ff3a" stroke-width="6" stroke-linejoin="round"/></svg>Ironmelt</a>
   <div class="nav-links">
+    <a href="#watch">Video</a>
     <a href="#game">The Game</a>
     <a href="#features">Features</a>
-    <a href="#watch">Video</a>
     <a href="#story">Story</a>
     <a href="#devlog">Devlog</a>
     <a href="#community">Community</a>
@@ -567,11 +583,39 @@
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://2.31.2.122/download/IronmeltLauncher.exe">Download for Windows<small>Free launcher &middot; installs and updates the game</small></a>
       <a class="btn btn-ghost" href="https://2.31.2.122/download/IronmeltLauncher-linux.tar.gz">Linux</a>
+      <a class="btn btn-ghost" href="#watch">&#9654; Watch the video</a>
       <a class="btn btn-ghost" href="#community">Join the Discord</a>
     </div>
     <p class="hero-note">Windows may say the launcher is from an unknown publisher: choose &ldquo;More info&rdquo; &rarr; &ldquo;Run anyway&rdquo;.</p>
   </div>
 </header>
+
+<section id="watch">
+  <div class="section-kicker">Video</div>
+  <h2>See it in action.</h2>
+  <p class="section-intro">Every part in the game, a bot built from scratch, and a very short test drive. More clips on our <a href="https://www.youtube.com/@IronmeltGame">YouTube channel</a>.</p>
+  <div class="video">
+    <button type="button" data-yt="DjsqEBqL13o" aria-label="Play video: Ironmelt: Fight for GAIA #3, Build and Test Drive">
+      <img src="img/video-3.jpg" alt="A six-wheeled bot rolling across a green meadow, an enemy bot and a charging tower in the distance" width="1280" height="720" loading="lazy">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+      <span class="cap">#3 &middot; Build &amp; Test Drive &mdash; from an empty hangar to a six-wheeled rover, then straight into the enemy</span>
+    </button>
+  </div>
+  <div class="video-more">
+    <div class="video video-small">
+      <button type="button" data-yt="_MnM9GM66zU" aria-label="Play video: Ironmelt: Fight for GAIA #1, First Test Match">
+        <img src="img/video-1.jpg" alt="An eight-wheeled bot racing across the desert towards a shield dome" width="1280" height="720" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+        <span class="cap">#1 &middot; First Test Match</span>
+      </button>
+    </div>
+    <a class="video-channel" href="https://www.youtube.com/@IronmeltGame">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+      <span>All videos on YouTube</span>
+    </a>
+  </div>
+  <p class="video-note">Clicking play loads the video from YouTube (privacy-enhanced mode). <a href="impressum.html#videos">Details</a></p>
+</section>
 
 <section id="game">
   <div class="section-kicker">The Game</div>
@@ -649,20 +693,6 @@
       <p>Combat power is never for sale. Bigger, stronger bots are earned by playing, never bought — and matches are balanced by bot size, so victory comes down to how you build and how you pilot.</p>
     </div>
   </div>
-</section>
-
-<section id="watch">
-  <div class="section-kicker">Video</div>
-  <h2>See it in action.</h2>
-  <p class="section-intro">Straight from the workshop. More clips on our <a href="https://www.youtube.com/@IronmeltGame">YouTube channel</a>.</p>
-  <div class="video">
-    <button type="button" data-yt="_MnM9GM66zU" aria-label="Play video: Ironmelt: Fight for GAIA #1, First Test Match">
-      <img src="img/video-1.jpg" alt="An eight-wheeled bot racing across the desert towards a shield dome" width="1280" height="720" loading="lazy">
-      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
-      <span class="cap">#1 &middot; First Test Match &mdash; my team against five AI bots, fighting for the towers</span>
-    </button>
-  </div>
-  <p class="video-note">Clicking play loads the video from YouTube (privacy-enhanced mode). <a href="impressum.html#videos">Details</a></p>
 </section>
 
 <section id="screenshots">
